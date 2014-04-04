@@ -226,13 +226,6 @@ int main()
                             currentLivesLabel->show();
                             foodIcon->show();
                             foodValue->show();
-
-                            /*std::stringstream tempTotalScore;
-                            tempTotalScore << "TOTAL SCORE : " << currentScore;
-                            std::string tempStr = tempTotalScore.str();
-                            totalScoreLabel->setText(tempStr);
-
-                            totalScoreLabel->show();*/
                         }
                     } break;
             }
@@ -277,10 +270,6 @@ int main()
             currentLives = tempLives.str();
 
             currentLivesLabel->setText(currentLives);
-
-            /*playAgain->hide();
-            quit->hide();
-            totalScoreLabel->hide();*/
         }
 
         if(snake.isAlive())
@@ -315,15 +304,7 @@ int main()
                     //putFood = true;
                 }
             }
-            /*playAgain->hide();
-            quit->hide();
-            totalScoreLabel->hide();*/
         }
-
-        //
-        /*system("cls");
-        sf::Vector2i mousePos = sf::Mouse::getPosition(gameWindow);
-        std::cout << mousePos.x << ", " << mousePos.y << std::endl;*/
 
         gameWindow.clear(sf::Color::Black);
 
@@ -336,10 +317,6 @@ int main()
                 food.create(gameWindow, sf::Vector2i(foodX, foodY));//, -5, -10);
             snake.move(direction);
             snake.draw(gameWindow);
-
-            /*playAgain->hide();
-            quit->hide();
-            totalScoreLabel->hide();*/
         }
 
         gameWindow.display();
@@ -362,9 +339,6 @@ int main()
                     bool foodRequired = true;
                 }
             }
-            /*playAgain->hide();
-            quit->hide();
-            totalScoreLabel->hide();*/
         }
 
         // snake crashes boundaries
@@ -378,9 +352,6 @@ int main()
                 bool foodEaten = true;
                 bool foodRequired = true;
             }
-           /* playAgain->hide();
-            quit->hide();
-            totalScoreLabel->hide();*/
         }
 
         // snake crashes with food
@@ -399,9 +370,6 @@ int main()
                 tempScore << cScore;
                 currentScore = tempScore.str();
             }
-            /*playAgain->hide();
-            quit->hide();
-            totalScoreLabel->hide();*/
         }
         //
     }
