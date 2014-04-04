@@ -2,7 +2,7 @@
 |       HISSS       |
 =====================
 
-Copyright (C) Koushtav Chakrabarty a.k.a. TheIllusionistMirage
+Copyright(C) Koushtav Chakrabarty a.k.a. TheIllusionistMirage
 
 ======================
 |	README       |
