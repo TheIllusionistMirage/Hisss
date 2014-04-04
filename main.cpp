@@ -138,6 +138,14 @@ int main()
     quit->setCallbackId(WidgetCallbacks::BUTTON_CALLBACK_ID);
     quit->bindCallback(tgui::Button::LeftMouseClicked);
 
+    tgui::Label::Ptr totalScoreLabel(gameGUI);
+    totalScoreLabel->load(TGUI_BLACK_THEME);
+    totalScoreLabel->setTextFont(globalFont);
+    totalScoreLabel->setTextSize(DEFAULT_LABEL_SIZE);
+    totalScoreLabel->setTextColor(sf::Color::White);
+    totalScoreLabel->setPosition(420.f, 350.f);
+    totalScoreLabel->setText("TOTAL SCORE : ");
+
     sf::Clock timer;
     float timeSurvived = 0.f;
 
@@ -218,6 +226,13 @@ int main()
                             currentLivesLabel->show();
                             foodIcon->show();
                             foodValue->show();
+
+                            /*std::stringstream tempTotalScore;
+                            tempTotalScore << "TOTAL SCORE : " << currentScore;
+                            std::string tempStr = tempTotalScore.str();
+                            totalScoreLabel->setText(tempStr);
+
+                            totalScoreLabel->show();*/
                         }
                     } break;
             }
@@ -233,9 +248,23 @@ int main()
             currentLivesLabel->hide();
             foodIcon->hide();
             foodValue->hide();
+            totalScoreLabel->hide();
 
             playAgain->show();
             quit->show();
+
+            std::stringstream tempTotalScore;
+            tempTotalScore << "TOTAL SCORE : " << currentScore;
+            std::string tempStr = tempTotalScore.str();
+            totalScoreLabel->setText(tempStr);
+
+            totalScoreLabel->show();
+        }
+        else
+        {
+            playAgain->hide();
+            quit->hide();
+            totalScoreLabel->hide();
         }
 
         if(snake.isAlive())
@@ -249,8 +278,9 @@ int main()
 
             currentLivesLabel->setText(currentLives);
 
-            playAgain->hide();
+            /*playAgain->hide();
             quit->hide();
+            totalScoreLabel->hide();*/
         }
 
         if(snake.isAlive())
@@ -285,8 +315,9 @@ int main()
                     //putFood = true;
                 }
             }
-            playAgain->hide();
+            /*playAgain->hide();
             quit->hide();
+            totalScoreLabel->hide();*/
         }
 
         //
@@ -306,8 +337,9 @@ int main()
             snake.move(direction);
             snake.draw(gameWindow);
 
-            playAgain->hide();
+            /*playAgain->hide();
             quit->hide();
+            totalScoreLabel->hide();*/
         }
 
         gameWindow.display();
@@ -330,8 +362,9 @@ int main()
                     bool foodRequired = true;
                 }
             }
-            playAgain->hide();
+            /*playAgain->hide();
             quit->hide();
+            totalScoreLabel->hide();*/
         }
 
         // snake crashes boundaries
@@ -345,8 +378,9 @@ int main()
                 bool foodEaten = true;
                 bool foodRequired = true;
             }
-            playAgain->hide();
+           /* playAgain->hide();
             quit->hide();
+            totalScoreLabel->hide();*/
         }
 
         // snake crashes with food
@@ -365,8 +399,9 @@ int main()
                 tempScore << cScore;
                 currentScore = tempScore.str();
             }
-            playAgain->hide();
+            /*playAgain->hide();
             quit->hide();
+            totalScoreLabel->hide();*/
         }
         //
     }
