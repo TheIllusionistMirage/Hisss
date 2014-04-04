@@ -1,5 +1,5 @@
 =====================
-|		HISSS		|
+|HISSS		|
 =====================
 
 Copyright (C) Koushtav Chakrabarty a.k.a. TheIllusionistMirage
