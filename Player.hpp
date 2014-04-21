@@ -1,41 +1,41 @@
 #ifndef PLAYER_HPP
 #define PLAYER_HPP
 
+#include <iostream>
 #include <list>
 #include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Drawable.hpp>
 #include "Constants.hpp"
 
-class Player
+class Player : public sf::Drawable
 {
     private:
-        // creates a list of size 0 and element type sf::Vector2i.
         std::list<tile> m_player;
-        sf::Texture m_playerTexture;
-        sf::Sprite m_playerTileSprite;
+        sf::Sprite m_playerSprite;
         int m_lives;
         bool m_alive;
         Direction m_playerDirection;
 
     public:
         Player();
-        Player(sf::Texture &texture, Direction direction = Direction::DOWN);
-        // move the front of the list m_player as per as the key pressed
         void move(Direction direction);
-        // render element by element on the screen the entire list, ie, get
-        //the coordinates from the list and use sf::sprite m_playerTileSprite to render them one by one
+        //void update(sf::RenderWindow &window);
+        bool update();
+        /* I had to use both update and draw in a single function as I couldn't figure
+           out a way to render the snake tile by tile using separate update() and draw() functions. */
         void draw(sf::RenderWindow &window);
+        void draw(sf::RenderTarget &target, sf::RenderStates states = sf::RenderStates::Default) const;
         bool isAlive();
         void reduceLife();
         int getLives();
         void addTile();
         void removeTile();
-        // return the x coordinate of the front element of m_player
         int getXCoord();
-        // return the y coordinate of the front element of m_player
         int getYCoord();
         std::list<tile> getplayerTiles();
         void reset();
         void resetLives();
+        void setTexture(const sf::Texture &texture);
         ~Player();
 };
 
