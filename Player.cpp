@@ -9,17 +9,6 @@ Player::Player() : m_lives(3), m_alive(true)
     m_playerDirection = Direction::DOWN;
 }
 
-/*Player::Player(sf::Texture &texture, Direction direction) : m_lives(3), m_alive(true)//, m_playerTexture(nullptr)
-{
-    //m_playerTexture = &texture;
-    //m_playerTileSprite.setTexture(*m_playerTexture);
-    m_player.push_back(tile(WIDTH / 2, HEIGHT / 3));
-    m_player.push_back(tile(WIDTH / 2, HEIGHT / 3 - 20));
-    m_player.push_back(tile(WIDTH / 2, HEIGHT / 3 - 40));
-
-    m_playerDirection = Direction::DOWN;
-}*/
-
 void Player::move(Direction direction)
 {
     removeTile();
@@ -65,69 +54,6 @@ void Player::move(Direction direction)
         }
     }
 }
-
-/*void Player::draw(sf::RenderWindow &window)
-{
-    int temp = 0;
-    for(std::list<tile>::iterator iptr = m_player.begin(); iptr != m_player.end(); iptr++)
-    {
-        m_playerTileSprite.setPosition(sf::Vector2f((int)iptr->x, (int)iptr->y));
-        if(temp == 0)
-        {
-            m_playerTileSprite.setTextureRect(sf::IntRect(0, 0, 20, 20));
-            temp++;
-        }
-        else if(temp == 1)
-        {
-            m_playerTileSprite.setTextureRect(sf::IntRect(20, 0, 20, 20));
-            temp--;
-        }
-        if(iptr == m_player.begin())
-        {
-            if(m_playerDirection == Direction::UP)
-                m_playerTileSprite.setTextureRect(sf::IntRect(80, 0, 20, 20));
-            if(m_playerDirection == Direction::RIGHT)
-                m_playerTileSprite.setTextureRect(sf::IntRect(40, 0, 20, 20));
-            if(m_playerDirection == Direction::DOWN)
-                m_playerTileSprite.setTextureRect(sf::IntRect(100, 0, 20, 20));
-            if(m_playerDirection == Direction::LEFT)
-                m_playerTileSprite.setTextureRect(sf::IntRect(60, 0, 20, 20));
-            window.draw(m_playerTileSprite);
-        }
-        else
-            window.draw(m_playerTileSprite);
-    }
-}*/
-
-/*void Player::update()
-{
-    int temp = 0;
-    for(std::list<tile>::iterator iptr = m_player.begin(); iptr != m_player.end(); iptr++)
-    {
-        m_playerSprite.setPosition(sf::Vector2f((int)iptr->x, (int)iptr->y));
-        if(temp == 0)
-        {
-            m_playerSprite.setTextureRect(sf::IntRect(0, 0, 20, 20));
-            temp++;
-        }
-        else if(temp == 1)
-        {
-            m_playerSprite.setTextureRect(sf::IntRect(20, 0, 20, 20));
-            temp--;
-        }
-        if(iptr == m_player.begin())
-        {
-            if(m_playerDirection == Direction::UP)
-                m_playerSprite.setTextureRect(sf::IntRect(80, 0, 20, 20));
-            if(m_playerDirection == Direction::RIGHT)
-                m_playerSprite.setTextureRect(sf::IntRect(40, 0, 20, 20));
-            if(m_playerDirection == Direction::DOWN)
-                m_playerSprite.setTextureRect(sf::IntRect(100, 0, 20, 20));
-            if(m_playerDirection == Direction::LEFT)
-                m_playerSprite.setTextureRect(sf::IntRect(60, 0, 20, 20));
-        }
-    }
-}*/
 
 bool Player::update()
 {
@@ -193,11 +119,6 @@ void Player::draw(sf::RenderWindow &window)
         window.draw(m_playerSprite);
     }
 }
-
-/*void Player::draw(sf::RenderTarget &target, sf::RenderStates states) const
-{
-    target.draw(m_playerSprite, states);
-}*/
 
 bool Player::isAlive()
 {
