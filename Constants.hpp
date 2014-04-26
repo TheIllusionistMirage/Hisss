@@ -10,7 +10,7 @@ const int HEIGHT             = 640;
 const int BPP                = 32;
 const std::string TITLE      = "Hisss...";
 const int FRAME_RATE_EASY = 5;
-const int FRAME_RATE_HARD = 5;
+const int FRAME_RATE_HARD = 10;
 
 const sf::Vector2i DEFAULT_TILE_DIMENSIONS = sf::Vector2i(20, 20);
 const std::string SNAKE_TILE_IMAGE         = "Resources/Images/snake.png";
@@ -35,7 +35,6 @@ enum GameStates
 {
     SHOWING_MAIN_MENU,
     SHOWING_PLAY_MENU,
-    //SHOWING_OPTIONS  ,
     SHOWING_SCORES   ,
     SHOWING_ABOUT    ,
     PLAYING_EASY     ,

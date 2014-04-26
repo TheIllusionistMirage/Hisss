@@ -7,7 +7,7 @@
 #include <SFML/Graphics/Drawable.hpp>
 #include "Constants.hpp"
 
-class Player : public sf::Drawable
+class Player //: public sf::Drawable
 {
     private:
         std::list<tile> m_player;
@@ -24,7 +24,7 @@ class Player : public sf::Drawable
         /* I had to use both update and draw in a single function as I couldn't figure
            out a way to render the snake tile by tile using separate update() and draw() functions. */
         void draw(sf::RenderWindow &window);
-        void draw(sf::RenderTarget &target, sf::RenderStates states = sf::RenderStates::Default) const;
+        //void draw(sf::RenderTarget &target, sf::RenderStates states = sf::RenderStates::Default) const;
         bool isAlive();
         void reduceLife();
         int getLives();
@@ -36,7 +36,6 @@ class Player : public sf::Drawable
         void reset();
         void resetLives();
         void setTexture(const sf::Texture &texture);
-        ~Player();
 };
 
 #endif // PLAYER_HPP

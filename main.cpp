@@ -2,21 +2,12 @@
 #include <exception>
 #include "Game.hpp"
 
-using namespace std;
-
 int main()
 {
-    try
+    Game m_game;
+    while(m_game.isGameRunning())
     {
-        Game m_game;
-        while(m_game.isGameRunning())
-        {
-            m_game.run();
-        }
-    }
-    catch(std::exception &e)
-    {
-        std::cout << e.what() << std::endl;
+        m_game.run();
     }
     return EXIT_SUCCESS;
 }

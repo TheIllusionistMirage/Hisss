@@ -60,14 +60,33 @@ class Game
         sf::Clock timer;
         float timeSurvived;
 
+        tgui::Picture::Ptr m_gameLogo;
+        tgui::Button::Ptr m_playButton;
+        tgui::Button::Ptr m_playEasyButton;
+        tgui::Button::Ptr m_playHardButton;
+        tgui::Button::Ptr m_aboutButton;
+        tgui::Button::Ptr m_quitButton;
+        tgui::Button::Ptr m_goBackButton;
+        tgui::Button::Ptr m_cancelButton;
+
+        GameStates m_gameState;
+
     public:
         Game();
         //void handleEvents();
+        void initGame(int difficulty);
         void run();
         void update();
         void draw();
         bool isGameRunning();
-        ~Game();
+
+        void showMainMenu();
+        void showPlayMenu();
+        void playGameEasy();
+        void playGameHard();
+        void showAbout();
+        void showQuitMsg();
+        void showAfterGameMsg();
 };
 
 #endif // GAME_HPP

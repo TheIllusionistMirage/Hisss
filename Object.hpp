@@ -6,7 +6,7 @@
 #include <SFML/Graphics/Drawable.hpp>
 #include "Constants.hpp"
 
-class Object : public sf::Drawable
+class Object //: public sf::Drawable
 {
     private:
         tile m_obj;
@@ -14,16 +14,15 @@ class Object : public sf::Drawable
         int m_objectType;
 
     public:
-        Object();
         void setType(int type);
         int getType();
         void create(sf::Vector2i position);
         void create(sf::Vector2i position, int offsetX, int offsetY);
-        void draw(sf::RenderTarget &target, sf::RenderStates states =  sf::RenderStates::Default) const;
+        void draw(sf::RenderWindow &window);
+        //void draw(sf::RenderTarget &target, sf::RenderStates states =  sf::RenderStates::Default) const;
         int getXCoord();
         int getYCoord();
         void setTexture(const sf::Texture &texture);
-        ~Object();
 };
 
 #endif // OBJECT_HPP

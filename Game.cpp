@@ -130,9 +130,10 @@ Game::Game()
     m_objects.push_back(Object());
     m_objects.back().setTexture(m_foodTexture);
     m_objects.back().setType(ObjectType::FOOD);
+
+    srand((unsigned int)time(0));
 }
 
-//void Game::handleEvents()
 void Game::run()
 {
     while(m_window.isOpen())
@@ -285,7 +286,6 @@ void Game::update()
                 }
             }
         }
-        //
 
         // snake crashes with himself
         if(m_snake.isAlive())
@@ -350,7 +350,6 @@ void Game::draw()
         }
         m_snake.move(m_direction);
         m_snake.draw(m_window);
-        //m_window.draw(m_snake);
     }
     m_window.display();
 }
@@ -358,9 +357,4 @@ void Game::draw()
 bool Game::isGameRunning()
 {
     return m_window.isOpen();
-}
-
-Game::~Game()
-{
-    //dtor
 }

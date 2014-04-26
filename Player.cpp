@@ -194,10 +194,10 @@ void Player::draw(sf::RenderWindow &window)
     }
 }
 
-void Player::draw(sf::RenderTarget &target, sf::RenderStates states) const
+/*void Player::draw(sf::RenderTarget &target, sf::RenderStates states) const
 {
     target.draw(m_playerSprite, states);
-}
+}*/
 
 bool Player::isAlive()
 {
@@ -259,8 +259,4 @@ void Player::resetLives()
 void Player::setTexture(const sf::Texture &texture)
 {
     m_playerSprite.setTexture(texture);
-}
-
-Player::~Player()
-{
 }
