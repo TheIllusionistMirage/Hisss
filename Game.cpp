@@ -16,8 +16,6 @@ Game::Game()
 
         m_playerTexture.loadFromFile(SNAKE_TILE_IMAGE);
         m_foodTexture.loadFromFile(FOOD_TILE_IMAGE);
-        //m_rockTexture.loadFromFile()
-        //m_wallTexture.loadFromFile()
     }
     catch(std::exception &e)
     {
@@ -170,11 +168,6 @@ void Game::run()
                             case sf::Keyboard::Left:
                                 {
                                     m_direction = Direction::LEFT;
-                                } break;
-                            // Just for testing. Delete later.
-                            case sf::Keyboard::K:
-                                {
-                                    m_snake.addTile();
                                 } break;
                         }
                     } break;
