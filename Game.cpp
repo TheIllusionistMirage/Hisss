@@ -169,8 +169,12 @@ void Game::run()
                                 {
                                     m_direction = Direction::LEFT;
                                 } break;
+                            default:
+                                break;
                         }
                     } break;
+                default:
+                    break;
             }
             m_gameGUI.handleEvent(m_event);
         }
@@ -192,9 +196,9 @@ void Game::run()
                             m_snake.reset();
                             m_snake.resetLives();
 
-                            bool foodEaten = true;
-                            bool foodRequired = true;
-                            bool putFood = true;
+                            foodEaten = true;
+                            foodRequired = true;
+                            putFood = true;
 
                             scoreInfo->show();
                             currentScoreLabel->show();
@@ -292,8 +296,8 @@ void Game::update()
                 {
                     m_snake.reduceLife();
                     m_snake.reset();
-                    bool foodEaten = true;
-                    bool foodRequired = true;
+                    foodEaten = true;
+                    foodRequired = true;
                 }
             }
         }
@@ -305,8 +309,8 @@ void Game::update()
             {
                 m_snake.reduceLife();
                 m_snake.reset();
-                bool foodEaten = true;
-                bool foodRequired = true;
+                foodEaten = true;
+                foodRequired = true;
             }
         }
 
