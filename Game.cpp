@@ -169,8 +169,12 @@ void Game::run()
                                 {
                                     m_direction = Direction::LEFT;
                                 } break;
+                            default:
+                                break;
                         }
                     } break;
+                default:
+                    break;
             }
             m_gameGUI.handleEvent(m_event);
         }
