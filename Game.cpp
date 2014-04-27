@@ -24,7 +24,6 @@ Game::Game()
 
     m_direction = Direction::DOWN;
 
-    foodEaten = true;
     foodRequired = true;
     putFood = true;
 
@@ -196,7 +195,6 @@ void Game::run()
                             m_snake.reset();
                             m_snake.resetLives();
 
-                            foodEaten = true;
                             foodRequired = true;
                             putFood = true;
 
@@ -272,14 +270,12 @@ void Game::update()
                     if(itr->x == foodSpawnedX && itr->y == foodSpawnedY)
                     {
                         foodRequired = true;
-                        foodEaten = true;
                         putFood = false;
                     }
                 }
                 if((foodSpawnedX > 25 && foodSpawnedX < 686 && foodSpawnedY > 25 && foodSpawnedY < 588) && putFood)
                 {
                     foodRequired = false;
-                    foodEaten = false;
                 }
             }
         }
@@ -296,7 +292,6 @@ void Game::update()
                 {
                     m_snake.reduceLife();
                     m_snake.reset();
-                    foodEaten = true;
                     foodRequired = true;
                 }
             }
@@ -309,7 +304,6 @@ void Game::update()
             {
                 m_snake.reduceLife();
                 m_snake.reset();
-                foodEaten = true;
                 foodRequired = true;
             }
         }
@@ -319,7 +313,6 @@ void Game::update()
         {
             if((m_objects.back().getXCoord() == m_snake.getXCoord()) && (m_objects.back().getYCoord() == m_snake.getYCoord()))
             {
-                foodEaten = true;
                 foodRequired = true;
                 m_snake.addTile();
 
