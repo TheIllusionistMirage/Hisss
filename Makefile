@@ -1,6 +1,6 @@
 CXXFLAGS   = -Wall -Wextra -g -fstack-protector-all -std=c++11
 LDFLAGS    = -ltgui -lsfml-graphics -lsfml-window -lsfml-system
-EXECUTABLE = Hiss
+EXECUTABLE = Hisss
 EXTENSION  = cpp
 SOURCES    = $(basename $(shell find . -name '*.$(EXTENSION)'))
 
